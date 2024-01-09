@@ -26,17 +26,34 @@ using SingletonPattern;
 
 
 
+//Parallel.Invoke(
+//    () =>
+//    {
+//        Biryani biryani1  = Biryani.getBiryaniObject();
+//        Console.WriteLine(biryani1.GetHashCode());
+
+//    },
+//    () =>
+//    {
+//    Biryani biryani2 = Biryani.getBiryaniObject();
+//    Console.WriteLine(biryani2.GetHashCode());
+
+//}
+//    );
+
+
+
 Parallel.Invoke(
     () =>
     {
-        Biryani biryani1  = Biryani.getBiryaniObject();
-        Console.WriteLine(biryani1.GetHashCode());
+        Momo momo1 = Momo.GetMomoObject();
+        Console.WriteLine(momo1.GetHashCode());
 
     },
     () =>
     {
-    Biryani biryani2 = Biryani.getBiryaniObject();
-    Console.WriteLine(biryani2.GetHashCode());
+        Momo momo2 = Momo.GetMomoObject();
+        Console.WriteLine(momo2.GetHashCode());
 
-}
+    }
     );
