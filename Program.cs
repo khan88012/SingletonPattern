@@ -1,7 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using SingletonPattern;
 
-Console.WriteLine("Singleton Desgin Pattern Example!");
+//Console.WriteLine("Singleton Desgin Pattern Example!");
 
 //Below line wont work as Pizza class constructor is private
 //Pizza pizza = new Pizza();
@@ -16,10 +16,27 @@ Console.WriteLine("Singleton Desgin Pattern Example!");
 
 
 
-Burger burger1 = Burger.GetBurgerObject();
-Burger burger2 =  Burger.GetBurgerObject();
+//Burger burger1 = Burger.GetBurgerObject();
+//Burger burger2 =  Burger.GetBurgerObject();
 
-if(burger1.GetHashCode() == burger2.GetHashCode())
-{
-    Console.WriteLine("Same Burger object is returned");
+//if(burger1.GetHashCode() == burger2.GetHashCode())
+//{
+//    Console.WriteLine("Same Burger object is returned");
+//}
+
+
+
+Parallel.Invoke(
+    () =>
+    {
+        Biryani biryani1  = Biryani.getBiryaniObject();
+        Console.WriteLine(biryani1.GetHashCode());
+
+    },
+    () =>
+    {
+    Biryani biryani2 = Biryani.getBiryaniObject();
+    Console.WriteLine(biryani2.GetHashCode());
+
 }
+    );
